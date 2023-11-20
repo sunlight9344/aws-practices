@@ -27,6 +27,13 @@
 		"DBUserPassword": {
 			"Description": "MySQl DB User Password of DBInstance",
 			"Type": "String"
+		},
+		"VPC": {
+			"Type": "AWS::EC2::VPC",
+			"Properties": {
+				"CidrBlock": "10.0.0.0/16",
+				"EnableDnsHostnames": "true"
+			}
 		}
 	},
 	"Resources": {
