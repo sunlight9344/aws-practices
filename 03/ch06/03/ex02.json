@@ -27,13 +27,6 @@
 		"DBUserPassword": {
 			"Description": "MySQl DB User Password of DBInstance",
 			"Type": "String"
-		},
-		"VPC": {
-			"Type": "AWS::EC2::VPC",
-			"Properties": {
-				"CidrBlock": "10.0.0.0/16",
-				"EnableDnsHostnames": "true"
-			}
 		}
 	},
 	"Resources": {
@@ -347,11 +340,10 @@
 			}
 		},
 
-
 		"Subnet03": {
 			"Type": "AWS::EC2::Subnet",
 			"Properties": {
-				"VpcId": {
+				"VPC": {
 					"Ref": "VPC"
 				},
 				"AvailabilityZone": "ap-northeast-2c",
@@ -361,7 +353,7 @@
 		"RouteTable03": {
 			"Type": "AWS::EC2::RouteTable",
 			"Properties": {
-				"VpcId": {
+				"VPC": {
 					"Ref": "VPC"
 				}
 			}
